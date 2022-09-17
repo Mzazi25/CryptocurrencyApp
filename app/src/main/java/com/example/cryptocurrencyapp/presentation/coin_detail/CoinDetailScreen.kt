@@ -16,7 +16,9 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.cryptocurrencyapp.domain.models.Coin
 import com.example.cryptocurrencyapp.presentation.Screen
 import com.example.cryptocurrencyapp.presentation.coin_detail.components.CoinTag
@@ -28,8 +30,9 @@ import kotlinx.coroutines.flow.flow
 
 @Composable
 fun CoinDetailScreen(
-    viewModel: CoinDetailViewModel
+    navController: NavHostController
 ) {
+    val viewModel = hiltViewModel<CoinDetailViewModel>()
     val state = viewModel.state.value
     Box(
         modifier = Modifier.fillMaxSize()

@@ -26,18 +26,16 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colors.background
                 ) {
-                    val listViewModel: CoinListViewModel by viewModels()
-                    val detailViewModel: CoinDetailViewModel by viewModels()
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
                         startDestination = Screen.CoinListScreen.route
                     ){
                         composable(route = Screen.CoinListScreen.route){
-                            CoinListScreen( navController = navController, viewModel = listViewModel)
+                            CoinListScreen( navController = navController)
                         }
                         composable(route = Screen.CoinDetailScreen.route +"/{coinId}"){
-                            CoinDetailScreen(viewModel = detailViewModel)
+                            CoinDetailScreen(navController= navController)
                         }
                     }
                 }
