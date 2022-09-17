@@ -38,12 +38,9 @@ class MainActivity : ComponentActivity() {
                             CoinListScreen( navController = navController)
                         }
                         composable(
-                            route = Screen.CoinDetailScreen.route +"/{coinId}",
-                            arguments = listOf(navArgument(PARAM_COIN_ID){
-                                type = NavType.IntType
-                            })
+                            route = Screen.CoinDetailScreen.route + "/{coinId}"
                         ){
-                            CoinDetailScreen(navController= navController)
+                            CoinDetailScreen()
                         }
                     }
                 }

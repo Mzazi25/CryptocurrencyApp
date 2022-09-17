@@ -30,7 +30,6 @@ import kotlinx.coroutines.flow.flow
 
 @Composable
 fun CoinDetailScreen(
-    navController: NavHostController
 ) {
     val viewModel = hiltViewModel<CoinDetailViewModel>()
     val state = viewModel.state.value
