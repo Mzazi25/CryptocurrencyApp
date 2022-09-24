@@ -1,22 +1,16 @@
 package com.example.cryptocurrencyapp.presentation.coin_detail
 
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.unit.Constraints
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cryptocurrencyapp.common.Constants
 import com.example.cryptocurrencyapp.common.Constants.PARAM_COIN_ID
 import com.example.cryptocurrencyapp.common.Resource
 import com.example.cryptocurrencyapp.domain.use_cases.get_coin.GetCoinUseCase
-import com.example.cryptocurrencyapp.domain.use_cases.get_coins.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
